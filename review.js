@@ -17,7 +17,7 @@ const options = {
   day: 'numeric',
   hour: '2-digit',
   minute: '2-digit',
-  // second: '2-digit',
+  second: '2-digit',
   hour12: true, // Change to true for 12-hour format
 };
 const formattedDateTime = now.toLocaleString('en-US', options);
@@ -32,7 +32,7 @@ berry_btn.addEventListener('click', function () {
   let randomNumber;
 
   do {
-    randomNumber = Math.floor(Math.random() * 3) + 1;
+    randomNumber = Math.floor(Math.random() * 4) + 1;
   } while (randomNumber === lastRandomNumber); // Ensure the new number is not the same as the last one
 
   lastRandomNumber = randomNumber; // Update the last random number
@@ -51,6 +51,22 @@ berry_btn.addEventListener('click', function () {
         return (greeting.textContent = 'Error: huh? did you enter your name??');
       }
       greeting.textContent = `Hello, ${user_input}!`;
+      break;
+    case 4:
+      // regenerate an updated date and time
+      const now = new Date(); // Get the current date and time
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true, // Change to true for 12-hour format
+      };
+      const formattedDateTime = now.toLocaleString('en-US', options);
+      // default state of marquee:
+      greeting.textContent = formattedDateTime;
       break;
     default:
       greeting.textContent =
