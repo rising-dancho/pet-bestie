@@ -25,9 +25,19 @@ const formattedDateTime = now.toLocaleString('en-US', options);
 // default state of marquee:
 greeting.textContent = formattedDateTime;
 
+// Variable to store the last random number
+let lastRandomNumber = null;
+
 berry_btn.addEventListener('click', function () {
+  let randomNumber;
+
+  do {
+    randomNumber = Math.floor(Math.random() * 3) + 1;
+  } while (randomNumber === lastRandomNumber); // Ensure the new number is not the same as the last one
+
+  lastRandomNumber = randomNumber; // Update the last random number
+
   const user_input = berry_field.value;
-  const randomNumber = Math.floor(Math.random() * 3) + 1;
 
   switch (randomNumber) {
     case 1:
