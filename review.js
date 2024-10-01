@@ -4,11 +4,6 @@ const berry_field = document.querySelector('#berry-field');
 const berry_btn = document.querySelector('#berry-btn');
 const msg = document.querySelector('#msg');
 
-// const firstname = 'adfinem';
-// const lastname = 'rising';
-// const fullname = firstname + ' ' + lastname;
-// console.log(fullname);
-
 // GET current date and time today:
 const now = new Date(); // Get the current date and time
 const options = {
@@ -41,14 +36,16 @@ berry_btn.addEventListener('click', function () {
 
   switch (randomNumber) {
     case 1:
-      greeting.textContent = 'jabagay';
+      greeting.textContent = 'jAbaG@y';
       break;
     case 2:
-      greeting.textContent = 'bitlog';
+      greeting.textContent =
+        'SPONSOR: This portion is brought to you by Jabolin Spicy.. "Mas mesherep kapag may red flag.. 🥵"';
       break;
     case 3:
       if (user_input === '') {
-        return (greeting.textContent = 'Error: huh? did you enter your name??');
+        return (greeting.textContent =
+          'ERROR: Huh?! Did you enter [your name]??! 🤔');
       }
       greeting.textContent = `Hello, ${user_input}!`;
       break;
@@ -73,5 +70,3 @@ berry_btn.addEventListener('click', function () {
         'Error: whoops! didnt see that coming.. some unknown error occured.';
   }
 });
-
-const day = 3;

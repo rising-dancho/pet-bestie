@@ -18,27 +18,11 @@
 </head>
 
 <body>
-  <!-- <nav>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </nav> -->
 
 
-  <marquee behavior="scroll" direction="left">
-    <h5 id="greeting"></h5>
-  </marquee>
-  <input id="berry-field" type="text" placeholder="Enter your name">
-  <button id="berry-btn">waz yo name?</button>
-  <p id="message"></p>
+  <section class="top bg-dark">
 
-
-
-  <section class="top">
-
-    <div class="hero-section relative-max-width padding-md center">
+    <div class="hero-section relative-max-width padding-md center bg-dark ">
       <!-- embelishment circle -->
       <div class="circle blue-circle" aria-hidden="true"></div>
       <!-- <img src="./images/Ellipse_blue.svg" alt="decorative ellipse" aria-hidden="true"> -->
@@ -56,7 +40,19 @@
         </div>
       </div>
       <div class="right">
+        <marquee behavior="scroll" direction="left" scrolldelay="25" scrollamount="8" class="marquee">
+          <h5 id="greeting"></h5>
+          <div>
+        </marquee>
+
+        <div class="center-container">
+          <input id="berry-field" type="text" placeholder="Enter your name" class="input-field-design">
+
+          <button id="berry-btn" class=" btn-randomizer">Submit</button>
+          <p id="message"></p>
+        </div>
       </div>
+    </div>
     </div>
 
 
