@@ -288,11 +288,6 @@ p {
   margin-top: var(--spacing-48px);
 }
 
-.hero-section .icon-style {
-  color: var(--white-text);
-  font-weight: var(--fw-800--extra-bold);
-}
-
 .hero-section .right {
   display: flex;
   flex-direction: column;
@@ -306,6 +301,7 @@ p {
 .input-field-design {
   background-color: var(--light-background);
   border-radius: var(--br-button);
+  font-family: var(--font-family);
 }
 
 .input-field-design {
