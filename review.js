@@ -40,7 +40,7 @@ berry_btn.addEventListener('click', function () {
       break;
     case 2:
       greeting.textContent =
-        'SPONSOR: "This portion is brought to you by Jabolin Spicy.. Mas mesherep kapag may red flag.. 🥵"';
+        'SPONSOR: "This portion is brought to you by Jabolin Spicy.. Mas mesherep kapag may red flag 🥵🥵🥵"';
       break;
     case 3:
       if (user_input === '') {
