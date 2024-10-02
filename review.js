@@ -1,7 +1,7 @@
 // selecting an html element
 const greeting = document.querySelector('#greeting');
-const berry_field = document.querySelector('#berry-field');
-const berry_btn = document.querySelector('#berry-btn');
+const marquee_field = document.querySelector('#marquee-field');
+const marquee_btn = document.querySelector('#marquee-btn');
 const msg = document.querySelector('#msg');
 
 // GET current date and time today:
@@ -23,7 +23,7 @@ greeting.textContent = formattedDateTime;
 // Variable to store the last random number
 let lastRandomNumber = null;
 
-berry_btn.addEventListener('click', function () {
+marquee_btn.addEventListener('click', function () {
   let randomNumber;
 
   do {
@@ -32,7 +32,7 @@ berry_btn.addEventListener('click', function () {
 
   lastRandomNumber = randomNumber; // Update the last random number
 
-  const user_input = berry_field.value;
+  const user_input = marquee_field.value;
 
   switch (randomNumber) {
     case 1:

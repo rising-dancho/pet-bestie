@@ -2,6 +2,9 @@
 /* VARIABLES                */
 /* ------------------------ */
 :root {
+  /* ----> FONT FAMILY <---- */
+  --font-family: 'Source Code Pro', sans-serif;
+
   /* ----> SPACING <---- */
   --spacing-2px: 0.125rem;
   --spacing-4px: 0.25rem;
@@ -54,7 +57,7 @@
   /* --ls-sm: 1.75px; */
 
   /* ----> BORDER RADIUS <---- */
-  --br-button: 4.4375rem;
+  --br-button: 10px;
   --br-card: 1.25rem;
 
   /* ----> COLORS <---- */
@@ -112,7 +115,7 @@
 html,
 body {
   scroll-behavior: smooth;
-  font-family: 'Source Code Pro', sans-serif;
+  font-family: var(--font-family);
   overflow-x: hidden;
 }
 
@@ -215,22 +218,41 @@ p {
 }
 
 .btn {
-  padding: var(--spacing-12px) var(--spacing-32px) !important;
-  font-weight: var(--fw-600--semi-bold);
-  border-radius: var(--br-button);
   cursor: pointer;
-  font-family: 'Trebuchet MS';
-  font-weight: var(--fw-800--extra-bold) !important;
+  padding: var(--spacing-12px) var(--spacing-32px) !important;
+  color: var(--white-text) !important;
+  font-family: var(--font-family);
+  font-size: var(--fs-18);
+  font-weight: var(--fw-800--extra-bold);
+  font-style: normal;
+  text-decoration: none;
+  border-radius: var(--br-button);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0px solid #000;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn.btn-primary {
-  background-color: var(--accent-color);
-  color: var(--white-text);
-  border: 2px solid var(--light-background);
+.btn:active {
+  transform: scale(0.95);
 }
 
-.btn.btn-primary:hover {
-  background-color: var(--accent-color-darkened);
+.randomizer {
+  padding: 14.4px 15px !important;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #196bca, #6433e0);
+  background-color: #196bca;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #5482d0, #7d5ee3);
+  background-color: #5482d0;
 }
 
 .btn.btn-outline {
@@ -263,6 +285,7 @@ p {
   width: 100%;
   background-color: transparent;
   font-size: var(--fs-24);
+  margin-top: var(--spacing-48px);
 }
 
 .hero-section .icon-style {
@@ -280,10 +303,9 @@ p {
   height: 100%;
 }
 
-.btn-randomizer,
 .input-field-design {
   background-color: var(--light-background);
-  border-radius: 6px;
+  border-radius: var(--br-button);
 }
 
 .input-field-design {
@@ -292,33 +314,6 @@ p {
   font-size: 18px;
   border: none;
   color: var(--black-text);
-}
-
-.btn-randomizer {
-  cursor: pointer;
-  background: linear-gradient(to right, #196bca, #6433e0);
-  background-color: #196bca;
-  color: var(--white-text);
-  font-family: 'Trebuchet MS';
-  font-size: 18px;
-  font-weight: 800;
-  font-style: normal;
-  text-decoration: none;
-  padding: 14.4px 15px;
-  border: 0px solid #000;
-  border-radius: 10px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-randomizer:hover {
-  background: linear-gradient(to right, #5482d0, #7d5ee3);
-  background-color: #5482d0;
-}
-
-.btn-randomizer:active {
-  transform: scale(0.95);
 }
 
 .center-container {
@@ -439,7 +434,7 @@ p {
   padding: none;
   cursor: pointer;
   color: var(--gray-text-heading);
-  font-family: 'Source Code Pro', sans-serif;
+  font-family: var(--font-family);
 }
 
 .pet-cards-container {
