@@ -259,6 +259,27 @@ p {
 /*   EXPERIMENTAL FEATURE   */
 /* ------------------------ */
 
+.hero-section .marquee {
+  width: 100%;
+  background-color: transparent;
+  font-size: var(--fs-24);
+}
+
+.hero-section .icon-style {
+  color: var(--white-text);
+  font-weight: var(--fw-800--extra-bold);
+}
+
+.hero-section .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-8px);
+  padding: var(--spacing-80px);
+  height: 100%;
+}
+
 .btn-randomizer,
 .input-field-design {
   background-color: var(--light-background);
@@ -327,27 +348,6 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* border: 1px solid red; */
-}
-
-.hero-section .marquee {
-  width: 100%;
-  background-color: transparent;
-  font-size: var(--fs-24);
-}
-
-.hero-section .icon-style {
-  color: var(--white-text);
-  font-weight: var(--fw-800--extra-bold);
-}
-
-.hero-section .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-8px);
-  padding: var(--spacing-80px);
-  height: 100%;
 }
 
 .hero-section .left,
@@ -506,6 +506,17 @@ footer p {
 
   .pets-section .pet-card {
     grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* border: 1px solid red; */
+  }
+
+  .hero-section .right {
+    gap: var(--spacing-32px);
+    padding: 0px;
   }
 }
 
