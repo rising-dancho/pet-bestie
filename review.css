@@ -332,6 +332,7 @@ p {
 .hero-section .marquee {
   width: 100%;
   background-color: transparent;
+  font-size: var(--fs-24);
 }
 
 .hero-section .icon-style {
