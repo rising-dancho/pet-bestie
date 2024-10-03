@@ -44,7 +44,7 @@ marquee_btn.addEventListener('click', function () {
         return (greeting.textContent =
           'ERROR: Huh?! Did you enter [your name]??! 🤔');
       }
-      greeting.textContent = `Hello, ${user_input}!`;
+      greeting.textContent = `Hello, ${user_input}! Welcome to find your bestie! yeasss!! 💅💅`;
       break;
     case 3:
       // regenerate an updated date and time
@@ -64,6 +64,6 @@ marquee_btn.addEventListener('click', function () {
       break;
     default:
       greeting.textContent =
-        'Error: whoops! didnt see that coming.. some unknown error occured.';
+        'Error: Whoops! didnt see that coming.. some unknown error occured.';
   }
 });
