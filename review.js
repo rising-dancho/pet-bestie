@@ -44,7 +44,7 @@ marquee_btn.addEventListener('click', function () {
         return (greeting.textContent =
           'ERROR: Huh?! Did you enter [your name]??! 🤔');
       }
-      greeting.textContent = `Hello, ${user_input}! Welcome to find your bestie! yeasss!! 💅💅`;
+      greeting.textContent = `Hello, ${user_input}! Welcome to Find Your Bestie! Yeasss!! 💅💅`;
       break;
     case 3:
       // regenerate an updated date and time
