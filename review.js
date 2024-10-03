@@ -36,20 +36,17 @@ marquee_btn.addEventListener('click', function () {
 
   switch (randomNumber) {
     case 1:
-      greeting.textContent = 'jAbaG@y';
-      break;
-    case 2:
       greeting.textContent =
         'SPONSOR: "This portion is brought to you by Jabolin Spicy.. Mas mesherep kapag may red flag 🥵🥵🥵"';
       break;
-    case 3:
+    case 2:
       if (user_input === '') {
         return (greeting.textContent =
           'ERROR: Huh?! Did you enter [your name]??! 🤔');
       }
       greeting.textContent = `Hello, ${user_input}!`;
       break;
-    case 4:
+    case 3:
       // regenerate an updated date and time
       const now = new Date(); // Get the current date and time
       const options = {
