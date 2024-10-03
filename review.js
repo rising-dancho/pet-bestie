@@ -27,7 +27,7 @@ marquee_btn.addEventListener('click', function () {
   let randomNumber;
 
   do {
-    randomNumber = Math.floor(Math.random() * 4) + 1;
+    randomNumber = Math.floor(Math.random() * 3) + 1;
   } while (randomNumber === lastRandomNumber); // Ensure the new number is not the same as the last one
 
   lastRandomNumber = randomNumber; // Update the last random number
