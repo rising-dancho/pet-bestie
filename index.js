@@ -1,6 +1,12 @@
+// weather
 const temp = document.querySelector('#weather-temp');
 const weather_condition = document.querySelector('#weather-condition');
 const icon = document.querySelector('#weather-icon');
+
+// location
+const location_name = document.querySelector('#location-name');
+const location_region = document.querySelector('#location-region');
+const location_country = document.querySelector('#location-country');
 
 async function start() {
   const weatherPromise = await fetch(
@@ -15,11 +21,22 @@ async function start() {
   // weather_condition.textContent = `${weatherData.current.condition.text}`;
   // icon.src = `${weatherData.current.condition.icon}`;
 
+  // WEATHER
   const { temp_c, condition } = weatherData.current;
 
   temp.textContent = temp_c;
   weather_condition.textContent = condition.text;
   icon.src = condition.icon;
+
+  // LOCATION
+  const { name, region, country } = weatherData.location;
+  console.log(name);
+  console.log(region);
+  console.log(country);
+
+  location_name.textContent = name;
+  location_region.textContent = region;
+  location_country.textContent = country;
 }
 
 start();
