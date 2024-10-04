@@ -14,14 +14,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./review.css">
+  <script src="review.js" defer></script>
+  <script src="index.js" defer></script>
 </head>
 
 <body>
-  <nav></nav>
 
-  <section class="top">
 
-    <div class="hero-section relative-max-width padding-md center">
+  <section class="top bg-dark">
+
+    <div class="hero-section relative-max-width padding-md center bg-dark ">
       <!-- embelishment circle -->
       <div class="circle blue-circle" aria-hidden="true"></div>
       <!-- <img src="./images/Ellipse_blue.svg" alt="decorative ellipse" aria-hidden="true"> -->
@@ -39,9 +41,24 @@
         </div>
       </div>
       <div class="right">
+        <marquee behavior="scroll" direction="left" scrolldelay="18" scrollamount="10" class="marquee">
+          <h5 id="greeting"></h5>
+          <div>
+        </marquee>
+
+        <div class="center-container">
+          <input id="marquee-field" type="text" placeholder="Enter your name" class="input-field-design">
+
+          <button id="marquee-btn" class="btn btn-primary randomizer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+            </svg>
+          </button>
+          <p id="message"></p>
+        </div>
       </div>
     </div>
-
 
     <div class="call-out-section max-width padding-md center">
 
@@ -49,7 +66,10 @@
         <img src="./images/sun-icon.svg" alt="sun icon">
         <div class="intro-features">
           <h4>Sunny Play</h4>
-          <p>Our center is located in beautiful Miami, and it’s currently <span></span>°F at our pet playground.</p>
+          <p>Our center is located in the beautiful <span id="location-name"></span>, <span
+              id="location-region"></span>, <span id="location-country"></span>, and it’s currently <span
+              id="weather-temp"></span>°C with <span id="weather-condition"></span> <img id="weather-icon"
+              alt="weather icon"> weather at our pet playground.</p>
         </div>
       </div>
 
