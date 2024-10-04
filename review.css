@@ -378,6 +378,10 @@ p {
   padding-bottom: var(--lr-padding-lg) !important;
 }
 
+.call-out-section #weather-icon {
+  width: var(--spacing-32px);
+}
+
 /* grid */
 .call-out-section {
   display: grid;

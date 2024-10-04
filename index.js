@@ -1,0 +1,18 @@
+const temp = document.querySelector('#weather-temp');
+const condition = document.querySelector('#weather-condition');
+const icon = document.querySelector('#weather-icon');
+
+async function start() {
+  const weatherPromise = await fetch(
+    'https://api.weatherapi.com/v1/current.json?q=14.682420719185082%2C121.12798023158746&key=0646a2235f34450f91e174616240410'
+  );
+  const weatherData = await weatherPromise.json();
+  console.log(weatherData);
+  console.log(weatherData.current.condition.text);
+  console.log(`${weatherData.current.temp_c}°C`);
+  temp.textContent = weatherData.current.temp_c;
+  condition.textContent = `${weatherData.current.condition.text}`;
+  icon.src = `${weatherData.current.condition.icon}`;
+}
+
+start();
