@@ -10,9 +10,13 @@ async function start() {
   console.log(weatherData);
   console.log(weatherData.current.condition.text);
   console.log(`${weatherData.current.temp_c}°C`);
-  temp.textContent = weatherData.current.temp_c;
-  condition.textContent = `${weatherData.current.condition.text}`;
-  icon.src = `${weatherData.current.condition.icon}`;
+
+  const { temp_c, condition } = weatherData.current; // destructure from object
+
+  temp.textContent = temp_c;
+  condition.textContent = condition.text;
+  icon.src = condition.icon;
+
 }
 
 start();
