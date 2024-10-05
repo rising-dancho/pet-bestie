@@ -72,6 +72,7 @@ async function petsArea() {
     clone.querySelector('h3').textContent = pet.name;
     clone.querySelector('.pet-description').textContent = pet.description;
     clone.querySelector('.pet-age').textContent = calculateAge(pet.birthYear);
+    clone.querySelector('.pet-card-photo img').src = pet.photo;
 
     wrapper.appendChild(clone);
   });
@@ -81,14 +82,14 @@ async function petsArea() {
 
 petsArea();
 
-function calculateAge(age) {
+function calculateAge(birthYear) {
   const current_year = new Date().getFullYear();
-  const result = current_year - age;
+  const age = current_year - birthYear;
 
-  if (result === 1) return '1 year old';
-  if (result < 1) return 'less than a year old';
+  if (age === 1) return '1 year old';
+  if (age < 1) return 'less than a year old';
 
-  return `${result} years old`;
+  return `${age} years old`;
 }
 
 // reference: https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather
