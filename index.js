@@ -11,6 +11,7 @@ const icon = document.querySelector('#weather-icon');
 // pet area
 const pet_area = document.querySelector('.pet-cards-container');
 
+
 async function start() {
   const weatherPromise = await fetch(
     'https://api.weatherapi.com/v1/current.json?q=14.682413578492366%2C121.12798895707499&key=0646a2235f34450f91e174616240410'
