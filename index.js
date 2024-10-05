@@ -69,6 +69,10 @@ async function petsArea() {
 
     // EFFICIENT APPROACH:
     const clone = template.content.cloneNode(true);
+    clone.querySelector('h3').textContent = pet.name;
+    clone.querySelector('.pet-description').textContent = pet.description;
+    clone.querySelector('.pet-age').textContent = calculateAge(pet.birthYear);
+
     wrapper.appendChild(clone);
   });
 
@@ -76,5 +80,9 @@ async function petsArea() {
 }
 
 petsArea();
+
+function calculateAge(age) {
+  
+}
 
 // reference: https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather
