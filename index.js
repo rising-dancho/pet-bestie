@@ -10,6 +10,10 @@ const icon = document.querySelector('#weather-icon');
 
 // pet area
 const pet_area = document.querySelector('.pet-cards-container');
+<<<<<<< HEAD
+=======
+
+>>>>>>> bcb124a63796817dc50a7d6df5195f18ae8f0b12
 
 async function start() {
   const weatherPromise = await fetch(
