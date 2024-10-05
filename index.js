@@ -82,7 +82,13 @@ async function petsArea() {
 petsArea();
 
 function calculateAge(age) {
-  
+  const current_year = new Date().getFullYear();
+  const result = current_year - age;
+
+  if (result === 1) return '1 year old';
+  if (result < 1) return 'less than a year old';
+
+  return `${result} years old`;
 }
 
 // reference: https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather
