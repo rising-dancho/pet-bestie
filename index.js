@@ -8,6 +8,10 @@ const icon = document.querySelector('#weather-icon');
 // const location_region = document.querySelector('#location-region');
 // const location_country = document.querySelector('#location-country');
 
+// pet area
+const pet_area = document.querySelector('.pet-cards-container');
+
+
 async function start() {
   const weatherPromise = await fetch(
     'https://api.weatherapi.com/v1/current.json?q=14.682413578492366%2C121.12798895707499&key=0646a2235f34450f91e174616240410'
@@ -41,5 +45,29 @@ async function start() {
 
 start();
 
+async function petsArea() {
+  const petsPromise = await fetch(
+    'https://learnwebcode.github.io/bootcamp-pet-data/pets.json'
+  );
+
+  const petsData = await petsPromise.json();
+
+  petsData.forEach((pet) => {
+    const petCard = `<div class="pet-card">
+    <div class="pet-details-container">
+      <h3>${pet.name}</h3>
+      <p>${pet.description}
+      </p>
+      <span>${pet.birthYear}</span>
+    </div>
+    <img src=${pet.photo} alt=${pet.species}
+  </div>`;
+
+    // append the cards to the container
+    pet_area.innerHTML += petCard;
+  });
+}
+
+petsArea();
 
 // reference: https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather
