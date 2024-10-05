@@ -73,6 +73,9 @@ async function petsArea() {
     clone.querySelector('.pet-description').textContent = pet.description;
     clone.querySelector('.pet-age').textContent = calculateAge(pet.birthYear);
     clone.querySelector('.pet-card-photo img').src = pet.photo;
+    clone.querySelector(
+      '.pet-card-photo img'
+    ).alt = `A ${pet.species} named ${pet.name}`;
 
     wrapper.appendChild(clone);
   });
@@ -87,7 +90,7 @@ function calculateAge(birthYear) {
   const age = current_year - birthYear;
 
   if (age === 1) return '1 year old';
-  if (age < 1) return 'less than a year old';
+  if (age < 1) return 'Less than a year old';
 
   return `${age} years old`;
 }
