@@ -378,18 +378,17 @@ p {
   padding-bottom: var(--lr-padding-lg) !important;
 }
 
-.call-out-section #weather {
+.call-out-section #weather-anchor {
   position: relative;
-  padding-right: var(--spacing-48px);
+  padding-left: var(--spacing-48px);
 }
 
 .call-out-section #weather-icon {
   position: absolute;
-  top: -0.5625rem; /* -9px; */
-  right: 0.125rem; /* 2px; */
+  top: -8px; /* -9px; */
+  left: 0px; /* 2px; */
   z-index: 999;
   width: 38px;
-  display: inline-block; /* Keeps it inline but removes inline element behavior */
   object-fit: cover;
 }
 
