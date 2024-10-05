@@ -1,3 +1,8 @@
+// pet area
+const pet_area = document.querySelector('.pet-cards-container');
+const template = document.querySelector('#pet-card-template');
+const wrapper = document.createDocumentFragment();
+
 // weather
 const temp = document.querySelector('#weather-temp');
 const weather_condition = document.querySelector('#weather-condition');
@@ -7,10 +12,6 @@ const icon = document.querySelector('#weather-icon');
 // const location_name = document.querySelector('#location-name');
 // const location_region = document.querySelector('#location-region');
 // const location_country = document.querySelector('#location-country');
-
-// pet area
-const pet_area = document.querySelector('.pet-cards-container');
-
 
 async function start() {
   const weatherPromise = await fetch(
@@ -53,19 +54,25 @@ async function petsArea() {
   const petsData = await petsPromise.json();
 
   petsData.forEach((pet) => {
-    const petCard = `<div class="pet-card">
-    <div class="pet-details-container">
-      <h3>${pet.name}</h3>
-      <p>${pet.description}
-      </p>
-      <span>${pet.birthYear}</span>
-    </div>
-    <img src=${pet.photo} alt=${pet.species}
-  </div>`;
+    // INEFFICIENT APPROACH:
+    //   const petCard = `<div class="pet-card">
+    //   <div class="pet-details-container">
+    //     <h3>${pet.name}</h3>
+    //     <p>${pet.description}
+    //     </p>
+    //     <span>${pet.birthYear}</span>
+    //   </div>
+    //   <img src=${pet.photo} alt=${pet.species}
+    // </div>`;
+    //   // append the cards to the container
+    //   pet_area.innerHTML += petCard;
 
-    // append the cards to the container
-    pet_area.innerHTML += petCard;
+    // EFFICIENT APPROACH:
+    const clone = template.content.cloneNode(true);
+    wrapper.appendChild(clone);
   });
+
+  pet_area.appendChild(wrapper);
 }
 
 petsArea();
