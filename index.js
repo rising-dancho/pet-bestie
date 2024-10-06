@@ -4,6 +4,7 @@ const weather_condition = document.querySelector('#weather-condition');
 const icon = document.querySelector('#weather-icon');
 const if_error = document.querySelector('#if-error');
 
+
 async function weather() {
   try {
     const weatherPromise = await fetch(
@@ -44,6 +45,7 @@ async function weather() {
     // Optional: log the full error for debugging
     console.error('Fetch error:', error);
   }
+
 }
 
 weather();
