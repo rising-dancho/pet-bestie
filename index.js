@@ -14,17 +14,17 @@ async function start() {
     'https://api.weatherapi.com/v1/current.json?q=14.682413578492366%2C121.12798895707499&key=0646a2235f34450f91e174616240410'
   );
   const weatherData = await weatherPromise.json();
-  console.log(weatherData);
-  console.log(weatherData.current.condition.text);
-  console.log(`${weatherData.current.temp_c}°C`);
+
+  // console.log(weatherData);
+  // console.log(weatherData.current.condition.text);
+  // console.log(`${weatherData.current.temp_c}°C`);
+
 
   // WEATHER
   const { temp_c, condition } = weatherData.current;
 
   // FALLBACK: in case of weather api error
-  if (!temp_c || !condition.text || !condition.icon)
-    if_error =
-      "[Whoops! Can't fetch weather data right now. Please try again later.. ✌️]";
+  if (!temp_c || !condition.text || !condition.icon) if_error.textContent = "[Whoops! Can't fetch weather data right now. Please try again later.. ✌️]";
 
   temp.textContent = temp_c;
   weather_condition.textContent = condition.text;
