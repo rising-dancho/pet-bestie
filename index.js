@@ -4,7 +4,6 @@ const weather_condition = document.querySelector('#weather-condition');
 const icon = document.querySelector('#weather-icon');
 const if_error = document.querySelector('#if-error');
 
-
 async function weather() {
   try {
     const weatherPromise = await fetch(
@@ -116,10 +115,11 @@ allFilterButtons.forEach((button) => {
   button.addEventListener('click', handleButtonClick);
 });
 
-function handleButtonClick() {
+function handleButtonClick(e) {
   // remove active class from any and all buttons
   allFilterButtons.forEach((button) => button.classList.remove('active'));
   // add active class to the specific button that just got clicked
+  e.target.classList.add('active');
   // actually filter the pets down below
 }
 
