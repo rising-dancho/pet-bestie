@@ -44,6 +44,7 @@ async function weather() {
     // Optional: log the full error for debugging
     console.error('Fetch error:', error);
   }
+
 }
 
 weather();
