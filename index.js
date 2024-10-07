@@ -30,7 +30,7 @@ async function weather() {
       if_error.style.marginTop = '12px';
 
       if_error.textContent =
-        'Whoops! The request took too long to respond. Please try again later.. ✌️';
+        "Whoops! We can't seem to get the weather forecast right now. Please try again later.. ✌️";
     } else {
       if_error.style.display = 'block';
       if_error.style.color = '#332700';
