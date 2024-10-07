@@ -64,17 +64,18 @@
   --white-text: #f9fdff;
   --black-text: #283f53;
   --gray-text-heading: #9da6ae;
+  --gray-text-heading-hover: hsl(208, 9%, 55%);
   --gray-text-p: #626469;
   --gray-text-dimmed: #a2a2a2;
 
   --accent-color: #475aff;
-  --accent-color-darkened: #4553d0;
+  --accent-color-hover: hsl(234, 100%, 54%);
   --circle-color-var1: #6079ff;
   --circle-color-var2: #d660ff;
 
   --dark-background: #001d37;
   --light-background: #f1f8ff;
-  --light-background-darkened: #d2dfea;
+  --light-background-hover: #d2dfea;
   --light-background-transparent: rgba(241, 248, 255, 0.24);
 
   --gray-border: #d9e5ee;
@@ -157,6 +158,15 @@ p {
 .active {
   text-decoration: underline;
   color: var(--accent-color) !important;
+}
+
+.active:hover {
+  color: var(--accent-color-hover) !important;
+  transform: scale(1.05);
+}
+
+.active:active {
+  transform: scale(0.95);
 }
 
 .center {
@@ -378,10 +388,17 @@ p {
   padding-bottom: var(--lr-padding-lg) !important;
 }
 
+.call-out-section #weather-anchor {
+  position: relative;
+  padding-left: var(--spacing-48px);
+}
+
 .call-out-section #weather-icon {
-  width: var(--spacing-48px);
-  height: 1em; /* adjusted the height to be the same as the paragraph height */
-  display: inline-block; /* Keeps it inline but removes inline element behavior */
+  position: absolute;
+  top: -8px; /* -9px; */
+  left: 0px; /* 2px; */
+  z-index: 999;
+  width: 38px;
   object-fit: cover;
 }
 
@@ -438,6 +455,15 @@ p {
   cursor: pointer;
   color: var(--gray-text-heading);
   font-family: var(--font-family);
+}
+
+.pets-section .filter-buttons-wrapper button:hover {
+  color: var(--gray-text-heading-hover);
+  transform: scale(1.05);
+}
+
+.pets-section .filter-buttons-wrapper button:active {
+  transform: scale(0.95);
 }
 
 .pet-cards-container {
@@ -516,6 +542,16 @@ footer p {
     gap: var(--spacing-32px);
     padding: 0px;
   }
+
+  .hero-section,
+  .call-out-section,
+  .pets-section,
+  .footer-section {
+    padding-left: var(--lr-padding-sm);
+    padding-right: var(--lr-padding-sm);
+    padding-top: var(--tb-padding-sm) !important;
+    padding-bottom: var(--tb-padding-sm) !important;
+  }
 }
 
 /* /* ------------------------ */
@@ -534,16 +570,6 @@ footer p {
   .pets-section .filter-buttons-wrapper button {
     font-size: var(--fs-18);
   }
-
-  .hero-section,
-  .call-out-section,
-  .pets-section,
-  .footer-section {
-    padding-left: var(--lr-padding-md);
-    padding-right: var(--lr-padding-md);
-    padding-top: var(--tb-padding-md) !important;
-    padding-bottom: var(--tb-padding-md) !important;
-  }
 }
 
 /* /* ------------------------ */
@@ -554,10 +580,10 @@ footer p {
   .call-out-section,
   .pets-section,
   .footer-section {
-    padding-left: var(--lr-padding-sm);
-    padding-right: var(--lr-padding-sm);
-    padding-top: var(--tb-padding-sm) !important;
-    padding-bottom: var(--tb-padding-sm) !important;
+    padding-left: var(--lr-padding-x-sm);
+    padding-right: var(--lr-padding-x-sm);
+    padding-top: var(--tb-padding-x-sm);
+    padding-bottom: var(--tb-padding-x-sm);
   }
 }
 
@@ -602,16 +628,6 @@ footer p {
 
   .pets-section .filter-buttons-wrapper button {
     text-align: start;
-  }
-
-  .hero-section,
-  .call-out-section,
-  .pets-section,
-  .footer-section {
-    padding-left: var(--lr-padding-x-sm);
-    padding-right: var(--lr-padding-x-sm);
-    padding-top: var(--tb-padding-x-sm);
-    padding-bottom: var(--tb-padding-x-sm);
   }
 }
 

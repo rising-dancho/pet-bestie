@@ -67,3 +67,9 @@ marquee_btn.addEventListener('click', function () {
         'Error: Whoops! didnt see that coming.. some unknown error occured.';
   }
 });
+
+// auto update year:
+const current_year = new Date().getFullYear();
+const footer_text = `&copy; ${current_year} Faux Adoption Center. All rights reserved.`;
+
+document.getElementById('copyright').innerHTML = footer_text;
