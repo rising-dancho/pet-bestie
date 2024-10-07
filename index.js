@@ -26,9 +26,11 @@ async function weather() {
       if_error.style.padding = '10px';
       if_error.style.border = '2px solid #e6707c';
       if_error.style.borderRadius = '5px';
+      if_error.style.fontweight = '900';
+      if_error.style.marginTop = '12px';
 
       if_error.textContent =
-        '[Whoops! The request took too long to respond. Please check your connection or try again later.. ✌️]';
+        'Whoops! The request took too long to respond. Please try again later.. ✌️';
     } else {
       if_error.style.display = 'block';
       if_error.style.color = '#332700';
@@ -36,15 +38,16 @@ async function weather() {
       if_error.style.padding = '10px';
       if_error.style.border = '1px solid #ffdb66';
       if_error.style.borderRadius = '5px';
+      if_error.style.fontweight = '900';
+      if_error.style.marginTop = '12px';
 
       if_error.textContent =
-        '[Whoops! There was an unexpected error fetching the weather data. Please try again later.. ✌️]';
+        'Whoops! There was an unexpected error fetching the weather data. Please try again later.. ✌️';
     }
 
     // Optional: log the full error for debugging
     console.error('Fetch error:', error);
   }
-
 }
 
 weather();
@@ -77,6 +80,9 @@ async function petsArea() {
 
     // EFFICIENT APPROACH:
     const clone = template.content.cloneNode(true);
+
+    clone.querySelector('.pet-card').dataset.species = pet.species;
+
     clone.querySelector('h3').textContent = pet.name;
     clone.querySelector('.pet-description').textContent = pet.description;
     clone.querySelector('.pet-age').textContent = calculateAge(pet.birthYear);
@@ -118,9 +124,24 @@ allFilterButtons.forEach((button) => {
 function handleButtonClick(e) {
   // remove active class from any and all buttons
   allFilterButtons.forEach((button) => button.classList.remove('active'));
+
   // add active class to the specific button that just got clicked
   e.target.classList.add('active');
+ 
   // actually filter the pets down below
+  const currentFilter =
+    e.target.dataset
+      .filter; /* getting the button that was clicked using data- html property */
+  
+  // loop through all the pet-cards
+  document.querySelectorAll('.pet-card').forEach((el) => {
+    // console.log(currentFilter, el.dataset.species);
+    if (currentFilter === el.dataset.species || currentFilter === 'all') {
+      el.style.display = 'grid';
+    } else {
+      el.style.display = 'none';
+    }
+  });
 }
 
 // API reference: https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather
