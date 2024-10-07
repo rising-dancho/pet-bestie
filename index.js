@@ -127,11 +127,12 @@ function handleButtonClick(e) {
 
   // add active class to the specific button that just got clicked
   e.target.classList.add('active');
-
+ 
   // actually filter the pets down below
   const currentFilter =
     e.target.dataset
       .filter; /* getting the button that was clicked using data- html property */
+  
   // loop through all the pet-cards
   document.querySelectorAll('.pet-card').forEach((el) => {
     // console.log(currentFilter, el.dataset.species);
